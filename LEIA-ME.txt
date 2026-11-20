@@ -1,0 +1,35 @@
+ORBE — PATCH INICIAL PARA EXPO
+================================
+
+O QUE ESTA VERSAO ENTREGA
+- Cadastro local de profissional (nome, e-mail, funcao, unidade e senha).
+- Login por e-mail e senha.
+- Autenticacao biometrica do aparelho (Face ID/reconhecimento facial, quando o dispositivo oferecer).
+- Dashboard inicial com indicadores e atividades demonstrativas.
+- Area do agente ORB com entrada por texto e resposta falada (text-to-speech).
+- Tela de atendimentos demonstrativos e perfil.
+- Tema azul-marinho, lilas e turquesa.
+
+COMO APLICAR
+1. Extraia o ZIP dentro da pasta raiz do seu projeto Expo, mantendo a estrutura.
+2. Confirme que apply-orbe.js, APLICAR_ORBE.bat e a pasta src estao ao lado do package.json.
+3. Execute APLICAR_ORBE.bat.
+4. O script faz backup dos arquivos que vai substituir, atualiza app.json, instala dependencias compativeis com seu Expo e inicia o Metro.
+5. Leia o QR Code normalmente no Expo Go.
+
+IMPORTANTE / LIMITACOES DESTA PRIMEIRA ENTREGA
+- Cadastro e login sao locais e demonstrativos neste aparelho. Nao sao um sistema de contas multiusuario nem substituem autenticacao no backend.
+- A biometria usa a autenticacao do proprio sistema operacional. O app nao captura nem armazena fotos do rosto ou modelos biometricos. Face ID precisa estar previamente configurado no aparelho.
+- Em alguns aparelhos a API pode oferecer apenas impressao digital ou outra biometria. A tela informa quando nao ha reconhecimento facial.
+- O ORB responde por texto e pode ler a resposta em voz alta. A palavra de ativacao continua "Hey ORB" e o reconhecimento de fala ainda nao estao implementados nesta versao: isso requer um motor de speech-to-text e, para escuta continua, um development build nativo; nao e suportado de forma confiavel apenas pelo Expo Go.
+- Numeros e ocorrencias do dashboard sao dados demonstrativos, nao metricas reais.
+- As consultas a protocolos ainda nao estao conectadas a uma base institucional aprovada. O assistente deixa isso explicito e nao inventa condutas.
+- Nenhuma acao critica e enviada ou encerrada automaticamente.
+
+ARQUIVOS SUBSTITUIDOS
+- src/app/index.tsx
+- src/app/_layout.tsx
+O original e preservado com sufixo .backup-<data>.
+
+PARA VOLTAR
+Restaure os arquivos .backup criados na pasta src/app e remova o plugin expo-local-authentication do app.json se desejar desfazer a configuracao.
